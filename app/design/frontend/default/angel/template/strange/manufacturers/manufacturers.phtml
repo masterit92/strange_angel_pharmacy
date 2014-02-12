@@ -1,0 +1,25 @@
+<?php
+/**
+ * @var Strange_Manufacturers_Block_Manufacturers $this
+ */
+?>
+<?php
+$helper = Mage::helper('strange_manufacturers');
+$manufacturers = $this->getManufacturers();
+$isHomepage = Mage::getBlockSingleton('page/html_header')->getIsHomePage();
+$carouselClass = $isHomepage ? 'home-bxslider' : 'bxslider';
+?>
+<?php if ($manufacturers): ?>
+    <div class="manufacturers">
+        <ul class="<?php echo $carouselClass ?>">
+        <?php foreach ($manufacturers as $key => $manufacturer): ?>
+            <?php $manufacturerValue = array_keys($manufacturer) ?>
+            <?php $manufacturerName = $helper->getManufacturerName($manufacturerValue) ?>
+            <?php $manufacturerLogo = $helper->getManufacturerLogo($manufacturerValue) ?>
+            <li>
+                <img alt="<?php echo $manufacturerName ?>" src="<?php echo $manufacturerLogo ?>"/>
+            </li>
+        <?php endforeach ?>
+        </ul>
+    </div>
+<?php endif; ?>

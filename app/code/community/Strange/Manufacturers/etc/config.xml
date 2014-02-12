@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Strange_Manufacturers>
+            <version>0.1.0</version>
+        </Strange_Manufacturers>
+    </modules>
+    <global>
+        <models>
+            <strange_manufacturers>
+                <class>Strange_Manufacturers_Model</class>
+            </strange_manufacturers>
+        </models>
+        <blocks>
+            <strange_manufacturers>
+                <class>Strange_Manufacturers_Block</class>
+            </strange_manufacturers>
+        </blocks>
+        <helpers>
+            <strange_manufacturers>
+                <class>Strange_Manufacturers_Helper</class>
+            </strange_manufacturers>
+        </helpers>
+        <resources>
+            <strange_manufacturers_setup>
+                <setup>
+                    <module>Strange_Manufacturers</module>
+                </setup>
+            </strange_manufacturers_setup>
+        </resources>
+    </global>
+</config>

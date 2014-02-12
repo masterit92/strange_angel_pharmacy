@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Angel_Theme>
+            <version>0.1.0</version>
+        </Angel_Theme>
+    </modules>
+    <global>
+        <models>
+            <angel_theme>
+                <class>Angel_Theme_Model</class>
+            </angel_theme>
+        </models>
+        <blocks>
+            <angel_theme>
+                <class>Angel_Theme_Block</class>
+            </angel_theme>
+        </blocks>
+        <helpers>
+            <angel_theme>
+                <class>Angel_Theme_Helper</class>
+            </angel_theme>
+        </helpers>
+        <resources>
+            <angel_theme_setup>
+                <setup>
+                    <module>Angel_Theme</module>
+                    <class>Angel_Theme_Model_Resource_Setup</class>
+                </setup>
+            </angel_theme_setup>
+        </resources>
+    </global>
+</config>

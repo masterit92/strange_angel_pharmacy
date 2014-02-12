@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Strange_FeaturedProducts>
+            <version>0.1.0</version>
+        </Strange_FeaturedProducts>
+    </modules>
+    <global>
+        <models>
+            <strange_featuredproducts>
+                <class>Strange_FeaturedProducts_Model</class>
+            </strange_featuredproducts>
+        </models>
+        <blocks>
+            <strange_featuredproducts>
+                <class>Strange_FeaturedProducts_Block</class>
+            </strange_featuredproducts>
+        </blocks>
+        <helpers>
+            <strange_featuredproducts>
+                <class>Strange_FeaturedProducts_Helper</class>
+            </strange_featuredproducts>
+        </helpers>
+        <resources>
+            <strange_featuredproducts_setup>
+                <setup>
+                    <module>Strange_FeaturedProducts</module>
+                </setup>
+            </strange_featuredproducts_setup>
+        </resources>
+    </global>
+</config>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Strange_FeaturedProducts>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Strange_FeaturedProducts>
+    </modules>
+</config>

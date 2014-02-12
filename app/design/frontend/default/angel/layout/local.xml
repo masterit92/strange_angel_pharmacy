@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!-- Angel theme -->
+<layout version="0.1.0">
+    <default translate="label" module="page">
+        <reference name="head">
+            <!-- JS -->
+            <action method="addItem"><type>skin_js</type><name>js/angel.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/jquery.1.8.2.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>bxslider/jquery.bxslider.min.js</name></action>
+
+            <!-- CSS -->
+            <action method="addItem"><type>skin_css</type><name>bxslider/jquery.bxslider.css</name></action>
+        </reference>
+        <reference name="header">
+            <block type="cms/block" name="angel_cookies_banner" as="angelCookiesBanner">
+                <action method="setBlockId"><block_id>angel_cookies_banner</block_id></action>
+            </block>
+            <block type="cms/block" name="angel_header_links" as="angelHeaderLinks">
+                <action method="setBlockId"><block_id>angel_header_links</block_id></action>
+            </block>
+            <block type="checkout/cart_sidebar" name="cart_sidebar" as="miniCart" template="checkout/cart/sidebar.phtml">
+                <action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>checkout/cart/sidebar/default.phtml</template></action>
+                <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>checkout/cart/sidebar/default.phtml</template></action>
+                <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>checkout/cart/sidebar/default.phtml</template></action>
+                <block type="core/text_list" name="cart_sidebar.extra_actions" as="extra_actions" translate="label" module="checkout">
+                    <label>Shopping Cart Sidebar Extra Actions</label>
+                </block>
+            </block>
+        </reference>
+        <reference name="top.links">
+            <remove name="checkout_cart_link"/>
+            <remove name="wishlist_link"/>
+            <action method="removeLinkByUrl">
+                <url helper="manufacturer/getManufacturerUrl"/>
+            </action>
+            <action method="removeLinkByUrl">
+                <url helper="customer/getAccountUrl"/>
+            </action>
+        </reference>
+    </default>
+    <customer_logged_in>
+        <action method="addLink" translate="label title" module="customer"><label>My Account</label><url helper="customer/getAccountUrl"/><title>My Account</title><prepare/><urlParams/><position>10</position></action>
+    </customer_logged_in>
+    <customer_logged_out>
+        <reference name="top.links">
+            <action method="addLink" translate="label title" module="customer"><label>Register</label><url helper="customer/getRegisterUrl"/><title>Register</title><prepare/><urlParams/><position>10</position></action>
+        </reference>
+    </customer_logged_out>
+    <catalog_category_default translate="label">
+    <label>Catalog Category (Non-Anchor)</label>
+    <reference name="content">
+        <block type="catalog/navigation" before="-" name="catalog.leftnav" after="currency"
+               template="catalog/navigation/left.phtml"/>
+    </reference>
+    </catalog_category_default>
+    <catalog_category_layered translate="label">
+    <label>Catalog Category (Anchor)</label>
+        <reference name="content">
+            <block type="catalog/navigation" before="-" name="catalog.leftnav" after="currency" template="catalog/navigation/left.phtml"/>
+        </reference>
+    </catalog_category_layered>
+</layout>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Angel_Theme>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Angel_Theme>
+    </modules>
+</config>
